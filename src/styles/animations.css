@@ -1,0 +1,83 @@
+/* animations.css - Core CRAB Motion System */
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lightTrace {
+  0% { transform: skewX(-20deg) translateX(-150%); }
+  100% { transform: skewX(-20deg) translateX(250%); }
+}
+
+@keyframes spin-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes logo-breathe {
+  0% { filter: drop-shadow(0 0 5px var(--glow-color)) brightness(1); }
+  100% { filter: drop-shadow(0 0 15px var(--glow-color)) brightness(1.2); }
+}
+
+@keyframes cinematic-logo-reveal {
+  0% { opacity: 0; transform: scale(0.5) translateY(20px); filter: blur(10px); }
+  30% { opacity: 1; transform: scale(1.05) translateY(0); filter: blur(0px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes cinematic-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes handshake-left {
+  0% { transform: translateX(-100vw); opacity: 0; }
+  20% { opacity: 1; }
+  50% { transform: translateX(0); opacity: 1; }
+  80% { transform: translateX(0); opacity: 0.2; }
+  100% { transform: translateX(0); opacity: 0.2; }
+}
+
+@keyframes handshake-right {
+  0% { transform: translateX(100vw) scaleX(-1); opacity: 0; }
+  20% { transform: translateX(80vw) scaleX(-1); opacity: 1; }
+  50% { transform: translateX(0) scaleX(-1); opacity: 1; }
+  80% { transform: translateX(0) scaleX(-1); opacity: 0.2; }
+  100% { transform: translateX(0) scaleX(-1); opacity: 0.2; }
+}
+
+@keyframes multicolor-line-sweep {
+  0% { transform: scaleX(0); opacity: 0; }
+  30% { transform: scaleX(1); opacity: 1; }
+  80% { transform: scaleX(1); opacity: 0.5; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes light-sweep {
+  0%, 90% { transform: skewX(-20deg) translateX(-150%); opacity: 0; }
+  95% { opacity: 0.5; }
+  100% { transform: skewX(-20deg) translateX(250%); opacity: 0; }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

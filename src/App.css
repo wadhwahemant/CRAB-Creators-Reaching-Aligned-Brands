@@ -1,0 +1,22 @@
+/* App.css - Cleaned up in Phase 2 */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+}
+
+/* Base Button & Link Interactions */
+button, a {
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+button:active {
+  transform: scale(0.97);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

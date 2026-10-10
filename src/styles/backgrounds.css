@@ -1,0 +1,48 @@
+/* backgrounds.css - CRAB Cinematic Atmosphere Animations */
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes drift-particle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(var(--tx, 50px), var(--ty, -50px));
+    opacity: 0;
+  }
+}
+
+@keyframes trace-flash {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle, 0deg)) translateX(-100%);
+  }
+  10% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 0;
+    transform: rotate(var(--angle, 0deg)) translateX(100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .crab-background-system * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
